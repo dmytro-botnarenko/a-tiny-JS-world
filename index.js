@@ -43,13 +43,14 @@ const woman = {
    hands: 2,
    saying: 'Honey, I\'m home!'
 };
-// ======== OUTPUT ========
 
 const catWoman = {...woman};
 
 catWoman.species = 'human-cat';
 catWoman.name = 'Mell';
 catWoman.saying = cat.saying;
+
+// ======== OUTPUT ========
 
 const creatures = [cat, dog, man, woman, catWoman];
 const features = ['species', 'name', 'gender', 'legs', 'hands', 'saying'];
