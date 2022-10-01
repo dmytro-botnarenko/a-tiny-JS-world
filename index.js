@@ -8,8 +8,41 @@ import { print } from './js/lib.js';
 
 // ======== OBJECTS DEFINITIONS ========
 // Define your objects here
+const cat = {
+   species: 'cat',
+   name: 'Tom',
+   gender: 'male',
+   legs: 4,
+   hands: 0,
+   saying: 'miaow'
+};
 
+const dog = {
+   species: 'dog',
+   name: 'Spike',
+   gender: 'male',
+   legs: 4,
+   hands: 0,
+   saying: 'bow-wow!'
+};
 
+const man = {
+   species: 'human',
+   name: 'Jack',
+   gender: 'male',
+   legs: 2,
+   hands: 2,
+   saying: 'where is my slippers?'
+};
+
+const woman = {
+   species: 'human',
+   name: 'Jannie',
+   gender: 'female',
+   legs: 2,
+   hands: 2,
+   saying: 'Honey, I\'m home!'
+};
 // ======== OUTPUT ========
 /* Use print(message) for output.
    Default tag for message is <pre>. Use print(message,'div') to change containing element tag.
@@ -28,3 +61,24 @@ import { print } from './js/lib.js';
    print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny');
    print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny', 'div');
    */
+
+const catWoman = {...woman};
+
+catWoman.species = 'human-cat';
+catWoman.name = 'Mell';
+catWoman.saying = cat.saying;
+
+const creatures = [cat, dog, man, woman, catWoman];
+const features = ['species', 'name', 'gender', 'legs', 'hands', 'saying'];
+
+// function objString(obj) {
+//    const arr = [];
+//    features.forEach((feature) => {
+//       arr.push(obj[feature]);
+//    });
+//    return arr.join(' | ');
+// }
+
+// creatures.forEach((creature) => {print(objString(creature))})
+
+creatures.forEach((creature) => {print(features.map(feature => creature[feature]).join(' | '))})
